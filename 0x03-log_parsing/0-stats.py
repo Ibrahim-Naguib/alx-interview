@@ -12,7 +12,14 @@ regex = (
 
 line_count = 0
 total_size = 0
-status_count = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+status_count = {"200": 0,
+                "301": 0,
+                "400": 0,
+                "401": 0,
+                "403": 0,
+                "404": 0,
+                "405": 0,
+                "500": 0}
 
 
 def print_stats():
@@ -28,7 +35,7 @@ try:
         match = re.match(regex, line)
         if match:
             file_size = int(match.group(2))
-            status_code = int(match.group(1))
+            status_code = match.group(1)
 
             total_size += file_size
             if status_code in status_count:
