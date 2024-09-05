@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def sieve_of_eratosthenes(max_n):
     is_prime = [True] * (max_n + 1)
     p = 2
